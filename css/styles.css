@@ -8,6 +8,7 @@
   --opening-deep-rose: #a96f7c;
   --opening-gold: #c7a36a;
   --opening-text: #403337;
+  color-scheme: only light;
 }
 
 
@@ -25,17 +26,13 @@
   overflow: hidden;
 
   background:
-    radial-gradient(
-      circle at 50% 20%,
+    radial-gradient(circle at 50% 20%,
       rgba(255, 255, 255, 0.95),
-      transparent 35%
-    ),
-    linear-gradient(
-      135deg,
+      transparent 35%),
+    linear-gradient(135deg,
       #fffaf7 0%,
       #f8e9eb 48%,
-      #f3d8dc 100%
-    );
+      #f3d8dc 100%);
 
   transition:
     opacity 1s ease,
@@ -115,9 +112,7 @@
   transform-style: preserve-3d;
 
   filter:
-    drop-shadow(
-      0 25px 35px rgba(99, 61, 70, 0.18)
-    );
+    drop-shadow(0 25px 35px rgba(99, 61, 70, 0.18));
 
   transition:
     transform 1s cubic-bezier(.22, .61, .36, 1);
@@ -133,11 +128,9 @@
   border-radius: 10px;
 
   background:
-    linear-gradient(
-      135deg,
+    linear-gradient(135deg,
       #f4dfe1,
-      #ead0d5
-    );
+      #ead0d5);
 
   border: 1px solid rgba(169, 111, 124, 0.18);
 
@@ -157,8 +150,7 @@
   height: 190px;
 
   transform:
-    translateX(-50%)
-    translateY(0);
+    translateX(-50%) translateY(0);
 
   display: flex;
   flex-direction: column;
@@ -166,13 +158,17 @@
   justify-content: center;
 
   gap: 5px;
+  background-color: #fffdfb;
+  background-image: linear-gradient(145deg,
+      #fffdfb,
+      #fff7f5);
 
-  background:
+  /* background:
     linear-gradient(
       145deg,
       #fffdfb,
       #fff7f5
-    );
+    ); */
 
   border: 1px solid rgba(199, 163, 106, 0.4);
 
@@ -227,9 +223,7 @@
   z-index: 4;
 
   filter:
-    drop-shadow(
-      0 2px 2px rgba(100, 60, 70, 0.08)
-    );
+    drop-shadow(0 2px 2px rgba(100, 60, 70, 0.08));
 
   transition:
     transform 0.9s cubic-bezier(.22, .61, .36, 1);
@@ -245,12 +239,10 @@
   z-index: 3;
 
   background:
-    linear-gradient(
-      135deg,
+    linear-gradient(135deg,
       transparent 49.5%,
-      rgba(255,255,255,0.25) 50%,
-      transparent 50.5%
-    );
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 50.5%);
 
   border-radius: 10px;
 
@@ -272,8 +264,7 @@
 
 .envelope.is-open .envelope-card {
   transform:
-    translateX(-50%)
-    translateY(-145px);
+    translateX(-50%) translateY(-145px);
 
   box-shadow:
     0 25px 50px rgba(83, 55, 62, 0.2);
@@ -287,11 +278,9 @@
 
   font-family: "Cormorant Garamond", serif;
 
-  font-size: clamp(
-    1.6rem,
-    5vw,
-    2.4rem
-  );
+  font-size: clamp(1.6rem,
+      5vw,
+      2.4rem);
 
   font-weight: 500;
 
@@ -384,7 +373,7 @@
 
 
 .open-invitation-btn i {
-  font-size: 0.75rem;
+  font-size: 3rem;
 }
 
 
@@ -503,12 +492,9 @@
 }
 
 /*  MOBILE */
-  
 
-@media (max-width: 600px) {
 
-   /* .container { flex-direction: column; }
-  h1 { font-size: 1.5rem; } */
+/* @media (max-width: 600px) {
 
   .opening-content {
     width: 92%;
@@ -562,6 +548,86 @@
     right: 7%;
   }
 
+} */
+
+
+/* MOBILE OPENING SCREEN */
+
+@media (max-width: 600px) {
+
+  .opening-content {
+    width: 94%;
+  }
+
+  .opening-eyebrow {
+    font-size: 0.7rem;
+  }
+
+  .opening-intro {
+    margin-bottom: 25px;
+    font-size: 1.15rem;
+  }
+
+  /* Bigger Envelope */
+  /* .envelope-wrapper {
+        width: min(86vw, 340px);
+        height: auto;
+        aspect-ratio: 31 / 22;
+        margin-bottom: 30px;
+    } */
+
+  .envelope-wrapper {
+    width: 100vw !important;
+    max-width: none !important;
+    height: auto !important;
+    aspect-ratio: 31 / 22;
+    margin: 0 auto 35px;
+  }
+
+  .envelope-flap {
+    border-left-width: 50vw;
+    border-right-width: 50vw;
+    border-top-width: 40vw;
+  }
+
+
+  /* .envelope-flap {
+        border-left-width: min(43vw, 170px);
+        border-right-width: min(43vw, 170px);
+        border-top-width: min(34.7vw, 137px);
+    } */
+
+  /* Envelope Card */
+  .envelope-card {
+    width: min(52vw, 175px);
+    height: min(54vw, 180px);
+    background-color: #fffdfb;
+    background-image: linear-gradient(145deg,
+        #fffdfb,
+        #fff7f5);
+  }
+
+  /* Keep opening animation */
+  .envelope.is-open .envelope-card {
+    transform:
+      translateX(-50%) translateY(-125px);
+  }
+
+  .opening-names {
+    font-size: 1.6rem;
+  }
+
+  .opening-date {
+    font-size: 0.7rem;
+  }
+
+  .decor-1 {
+    left: 8%;
+  }
+
+  .decor-2 {
+    right: 7%;
+  }
 }
 
 
@@ -588,16 +654,15 @@
 
 :root {
   --ivory: #f7f3ee;
-  --forest:linear-gradient(
-      135deg,
+  --forest: linear-gradient(135deg,
       #F3C6D3 65%,
-      #D99AAE 100%
-    );;
-  --forest-soft:#A95F78;
+      #D99AAE 100%);
+  ;
+  --forest-soft: #A95F78;
   --gold: #c4a574;
   --gold-deep: #a88754;
   --blush: #e8d5cf;
-  --ink:#A95F78;
+  --ink: #A95F78;
   --muted: #6b635c;
   --white: #fffdfb;
   --header-h: 4.5rem;
@@ -763,14 +828,13 @@ a {
   place-items: center;
   text-align: center;
   color: var(--ivory);
-  background: url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=80")
-    center/cover no-repeat;
+  background: url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(174, 77, 150, 0.45) 0%, rgba(159, 81, 167, 0.72) 100%);  
+  background: linear-gradient(180deg, rgba(174, 77, 150, 0.45) 0%, rgba(159, 81, 167, 0.72) 100%);
 }
 
 .hero-content {
@@ -881,11 +945,11 @@ a {
   margin: 0;
 }
 
-.invite{
+.invite {
   display: flex;
   justify-content: center;
   align-items: center;
-  }
+}
 
 .section-intro {
   max-width: 640px;
@@ -949,7 +1013,7 @@ a {
   color: var(--muted);
 }
 
-.Join{
+.Join {
   display: flex;
   align-content: center;
   justify-content: center;
@@ -989,12 +1053,13 @@ a {
 }
 
 
-.card-label{
+.card-label {
   font-size: 1.05rem;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
 }
+
 .gallery-section {
   background: var(--ivory);
 }
@@ -1029,7 +1094,7 @@ a {
 .gallery-item img {
   width: 100%;
   height: 160px;
-  object-fit:cover;
+  object-fit: cover;
   transition: transform 0.5s ease;
 }
 
@@ -1058,7 +1123,7 @@ a {
 .lightbox img {
   max-height: min(78vh, 820px);
   max-width: min(92vw, 1000px);
-  object-fit:contain;
+  object-fit: contain;
 }
 
 .lightbox-close,
@@ -1196,12 +1261,15 @@ a {
 .delay-1 {
   animation-delay: 0.15s;
 }
+
 .delay-2 {
   animation-delay: 0.3s;
 }
+
 .delay-3 {
   animation-delay: 0.45s;
 }
+
 .delay-4 {
   animation-delay: 0.6s;
 }
@@ -1225,10 +1293,12 @@ a {
 }
 
 @keyframes bounce {
+
   0%,
   100% {
     transform: rotate(45deg) translateY(0);
   }
+
   50% {
     transform: rotate(45deg) translateY(6px);
   }
